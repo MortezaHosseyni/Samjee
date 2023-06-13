@@ -77,6 +77,9 @@
             this.txt_CalcExpenseTitle = new System.Windows.Forms.TextBox();
             this.txt_CalcIncomeTitle = new System.Windows.Forms.TextBox();
             this.dgv_CalcTransactions = new System.Windows.Forms.DataGridView();
+            this.cms_CalcTransactionsList = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.btn_CalculateList = new System.Windows.Forms.ToolStripMenuItem();
+            this.btn_ShowListInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.dgv_CalcIncomes = new System.Windows.Forms.DataGridView();
             this.dgv_CalcExpenses = new System.Windows.Forms.DataGridView();
             this.tab_MachineLearning = new System.Windows.Forms.TabPage();
@@ -105,22 +108,19 @@
             this.dgv_MLTransactionsList = new System.Windows.Forms.DataGridView();
             this.dgv_MLIncomes = new System.Windows.Forms.DataGridView();
             this.dgv_MLExpenses = new System.Windows.Forms.DataGridView();
-            this.cms_CalcTransactionsList = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.btn_CalculateList = new System.Windows.Forms.ToolStripMenuItem();
-            this.btn_ShowListInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.mns_TopMenu.SuspendLayout();
             this.tbc_MainTab.SuspendLayout();
             this.tab_Dashboard.SuspendLayout();
             this.pnl_Info.SuspendLayout();
             this.tab_AICalc.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CalcTransactions)).BeginInit();
+            this.cms_CalcTransactionsList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CalcIncomes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CalcExpenses)).BeginInit();
             this.tab_MachineLearning.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MLTransactionsList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MLIncomes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MLExpenses)).BeginInit();
-            this.cms_CalcTransactionsList.SuspendLayout();
             this.SuspendLayout();
             // 
             // mns_TopMenu
@@ -543,6 +543,7 @@
             this.txt_CalcExpenseValue.Name = "txt_CalcExpenseValue";
             this.txt_CalcExpenseValue.Size = new System.Drawing.Size(194, 22);
             this.txt_CalcExpenseValue.TabIndex = 15;
+            this.txt_CalcExpenseValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CalcExpenseValue_KeyPress);
             // 
             // txt_CalcIncomeValue
             // 
@@ -550,6 +551,7 @@
             this.txt_CalcIncomeValue.Name = "txt_CalcIncomeValue";
             this.txt_CalcIncomeValue.Size = new System.Drawing.Size(194, 22);
             this.txt_CalcIncomeValue.TabIndex = 14;
+            this.txt_CalcIncomeValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CalcIncomeValue_KeyPress);
             // 
             // txt_CalcListLevel
             // 
@@ -557,6 +559,7 @@
             this.txt_CalcListLevel.Name = "txt_CalcListLevel";
             this.txt_CalcListLevel.Size = new System.Drawing.Size(194, 22);
             this.txt_CalcListLevel.TabIndex = 13;
+            this.txt_CalcListLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CalcListLevel_KeyPress);
             // 
             // txt_CalcListName
             // 
@@ -587,6 +590,26 @@
             this.dgv_CalcTransactions.Name = "dgv_CalcTransactions";
             this.dgv_CalcTransactions.Size = new System.Drawing.Size(339, 357);
             this.dgv_CalcTransactions.TabIndex = 9;
+            // 
+            // cms_CalcTransactionsList
+            // 
+            this.cms_CalcTransactionsList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btn_CalculateList,
+            this.btn_ShowListInfo});
+            this.cms_CalcTransactionsList.Name = "cms_CalcTransactionsList";
+            this.cms_CalcTransactionsList.Size = new System.Drawing.Size(148, 48);
+            // 
+            // btn_CalculateList
+            // 
+            this.btn_CalculateList.Name = "btn_CalculateList";
+            this.btn_CalculateList.Size = new System.Drawing.Size(147, 22);
+            this.btn_CalculateList.Text = "محاسبه";
+            // 
+            // btn_ShowListInfo
+            // 
+            this.btn_ShowListInfo.Name = "btn_ShowListInfo";
+            this.btn_ShowListInfo.Size = new System.Drawing.Size(147, 22);
+            this.btn_ShowListInfo.Text = "اطلاعات لیست";
             // 
             // dgv_CalcIncomes
             // 
@@ -797,6 +820,7 @@
             this.txt_MLExpenseValue.Name = "txt_MLExpenseValue";
             this.txt_MLExpenseValue.Size = new System.Drawing.Size(194, 22);
             this.txt_MLExpenseValue.TabIndex = 2;
+            this.txt_MLExpenseValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MLExpenseValue_KeyPress);
             // 
             // txt_MLIncomeValue
             // 
@@ -804,6 +828,7 @@
             this.txt_MLIncomeValue.Name = "txt_MLIncomeValue";
             this.txt_MLIncomeValue.Size = new System.Drawing.Size(194, 22);
             this.txt_MLIncomeValue.TabIndex = 2;
+            this.txt_MLIncomeValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MLIncomeValue_KeyPress);
             // 
             // txt_MLListLevel
             // 
@@ -811,6 +836,7 @@
             this.txt_MLListLevel.Name = "txt_MLListLevel";
             this.txt_MLListLevel.Size = new System.Drawing.Size(194, 22);
             this.txt_MLListLevel.TabIndex = 2;
+            this.txt_MLListLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MLListLevel_KeyPress);
             // 
             // txt_MLListName
             // 
@@ -857,26 +883,6 @@
             this.dgv_MLExpenses.Size = new System.Drawing.Size(234, 357);
             this.dgv_MLExpenses.TabIndex = 0;
             // 
-            // cms_CalcTransactionsList
-            // 
-            this.cms_CalcTransactionsList.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btn_CalculateList,
-            this.btn_ShowListInfo});
-            this.cms_CalcTransactionsList.Name = "cms_CalcTransactionsList";
-            this.cms_CalcTransactionsList.Size = new System.Drawing.Size(148, 48);
-            // 
-            // btn_CalculateList
-            // 
-            this.btn_CalculateList.Name = "btn_CalculateList";
-            this.btn_CalculateList.Size = new System.Drawing.Size(147, 22);
-            this.btn_CalculateList.Text = "محاسبه";
-            // 
-            // btn_ShowListInfo
-            // 
-            this.btn_ShowListInfo.Name = "btn_ShowListInfo";
-            this.btn_ShowListInfo.Size = new System.Drawing.Size(147, 22);
-            this.btn_ShowListInfo.Text = "اطلاعات لیست";
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -902,6 +908,7 @@
             this.tab_AICalc.ResumeLayout(false);
             this.tab_AICalc.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CalcTransactions)).EndInit();
+            this.cms_CalcTransactionsList.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CalcIncomes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_CalcExpenses)).EndInit();
             this.tab_MachineLearning.ResumeLayout(false);
@@ -909,7 +916,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MLTransactionsList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MLIncomes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_MLExpenses)).EndInit();
-            this.cms_CalcTransactionsList.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
