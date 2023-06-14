@@ -63,7 +63,6 @@
             this.lbl_CalcExpenses = new System.Windows.Forms.Label();
             this.lbl_CalcTransactionsList = new System.Windows.Forms.Label();
             this.lbl_CalcIncomes = new System.Windows.Forms.Label();
-            this.lbl_CalcListLevel = new System.Windows.Forms.Label();
             this.lbl_CalcListName = new System.Windows.Forms.Label();
             this.lbl_CalcExpenseTitle = new System.Windows.Forms.Label();
             this.lbl_CalcIncomeTitle = new System.Windows.Forms.Label();
@@ -72,7 +71,6 @@
             this.btn_CalcSaveIncome = new System.Windows.Forms.Button();
             this.txt_CalcExpenseValue = new System.Windows.Forms.TextBox();
             this.txt_CalcIncomeValue = new System.Windows.Forms.TextBox();
-            this.txt_CalcListLevel = new System.Windows.Forms.TextBox();
             this.txt_CalcListName = new System.Windows.Forms.TextBox();
             this.txt_CalcExpenseTitle = new System.Windows.Forms.TextBox();
             this.txt_CalcIncomeTitle = new System.Windows.Forms.TextBox();
@@ -85,7 +83,7 @@
             this.tab_MachineLearning = new System.Windows.Forms.TabPage();
             this.cmb_MLIncomeList = new System.Windows.Forms.ComboBox();
             this.lbl_MLIncomeList = new System.Windows.Forms.Label();
-            this.cbm_MLExpenseList = new System.Windows.Forms.ComboBox();
+            this.cmb_MLExpenseList = new System.Windows.Forms.ComboBox();
             this.lbl_MLExpenseList = new System.Windows.Forms.Label();
             this.lbl_MLExpenseValue = new System.Windows.Forms.Label();
             this.lbl_MLIncomeValue = new System.Windows.Forms.Label();
@@ -108,6 +106,22 @@
             this.dgv_MLTransactionsList = new System.Windows.Forms.DataGridView();
             this.dgv_MLIncomes = new System.Windows.Forms.DataGridView();
             this.dgv_MLExpenses = new System.Windows.Forms.DataGridView();
+            this.col_MLListID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLListName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLListCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLListLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLListIncomesNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLListExpenseNumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLIncomeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLIncomeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLIncomeValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLIncomeCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLIncomeList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLExpenseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLExpenseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLExpenseValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLExpenseCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_MLExpenseList = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mns_TopMenu.SuspendLayout();
             this.tbc_MainTab.SuspendLayout();
             this.tab_Dashboard.SuspendLayout();
@@ -359,7 +373,6 @@
             this.tab_AICalc.Controls.Add(this.lbl_CalcExpenses);
             this.tab_AICalc.Controls.Add(this.lbl_CalcTransactionsList);
             this.tab_AICalc.Controls.Add(this.lbl_CalcIncomes);
-            this.tab_AICalc.Controls.Add(this.lbl_CalcListLevel);
             this.tab_AICalc.Controls.Add(this.lbl_CalcListName);
             this.tab_AICalc.Controls.Add(this.lbl_CalcExpenseTitle);
             this.tab_AICalc.Controls.Add(this.lbl_CalcIncomeTitle);
@@ -368,7 +381,6 @@
             this.tab_AICalc.Controls.Add(this.btn_CalcSaveIncome);
             this.tab_AICalc.Controls.Add(this.txt_CalcExpenseValue);
             this.tab_AICalc.Controls.Add(this.txt_CalcIncomeValue);
-            this.tab_AICalc.Controls.Add(this.txt_CalcListLevel);
             this.tab_AICalc.Controls.Add(this.txt_CalcListName);
             this.tab_AICalc.Controls.Add(this.txt_CalcExpenseTitle);
             this.tab_AICalc.Controls.Add(this.txt_CalcIncomeTitle);
@@ -387,15 +399,15 @@
             // cmb_CalcIncomeList
             // 
             this.cmb_CalcIncomeList.FormattingEnabled = true;
-            this.cmb_CalcIncomeList.Location = new System.Drawing.Point(3, 442);
+            this.cmb_CalcIncomeList.Location = new System.Drawing.Point(243, 442);
             this.cmb_CalcIncomeList.Name = "cmb_CalcIncomeList";
             this.cmb_CalcIncomeList.Size = new System.Drawing.Size(194, 24);
-            this.cmb_CalcIncomeList.TabIndex = 31;
+            this.cmb_CalcIncomeList.TabIndex = 5;
             // 
             // lbl_CalcIncomeList
             // 
             this.lbl_CalcIncomeList.AutoSize = true;
-            this.lbl_CalcIncomeList.Location = new System.Drawing.Point(203, 445);
+            this.lbl_CalcIncomeList.Location = new System.Drawing.Point(443, 445);
             this.lbl_CalcIncomeList.Name = "lbl_CalcIncomeList";
             this.lbl_CalcIncomeList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_CalcIncomeList.Size = new System.Drawing.Size(35, 16);
@@ -405,15 +417,15 @@
             // cmb_CalcExpenseList
             // 
             this.cmb_CalcExpenseList.FormattingEnabled = true;
-            this.cmb_CalcExpenseList.Location = new System.Drawing.Point(243, 442);
+            this.cmb_CalcExpenseList.Location = new System.Drawing.Point(3, 442);
             this.cmb_CalcExpenseList.Name = "cmb_CalcExpenseList";
             this.cmb_CalcExpenseList.Size = new System.Drawing.Size(194, 24);
-            this.cmb_CalcExpenseList.TabIndex = 30;
+            this.cmb_CalcExpenseList.TabIndex = 9;
             // 
             // lbl_CalcExpenseList
             // 
             this.lbl_CalcExpenseList.AutoSize = true;
-            this.lbl_CalcExpenseList.Location = new System.Drawing.Point(443, 445);
+            this.lbl_CalcExpenseList.Location = new System.Drawing.Point(203, 445);
             this.lbl_CalcExpenseList.Name = "lbl_CalcExpenseList";
             this.lbl_CalcExpenseList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_CalcExpenseList.Size = new System.Drawing.Size(35, 16);
@@ -423,7 +435,7 @@
             // lbl_CalcExpenseValue
             // 
             this.lbl_CalcExpenseValue.AutoSize = true;
-            this.lbl_CalcExpenseValue.Location = new System.Drawing.Point(443, 417);
+            this.lbl_CalcExpenseValue.Location = new System.Drawing.Point(203, 417);
             this.lbl_CalcExpenseValue.Name = "lbl_CalcExpenseValue";
             this.lbl_CalcExpenseValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_CalcExpenseValue.Size = new System.Drawing.Size(35, 16);
@@ -433,7 +445,7 @@
             // lbl_CalcIncomeValue
             // 
             this.lbl_CalcIncomeValue.AutoSize = true;
-            this.lbl_CalcIncomeValue.Location = new System.Drawing.Point(203, 417);
+            this.lbl_CalcIncomeValue.Location = new System.Drawing.Point(443, 417);
             this.lbl_CalcIncomeValue.Name = "lbl_CalcIncomeValue";
             this.lbl_CalcIncomeValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_CalcIncomeValue.Size = new System.Drawing.Size(35, 16);
@@ -470,16 +482,6 @@
             this.lbl_CalcIncomes.TabIndex = 22;
             this.lbl_CalcIncomes.Text = "ورودی‌ها";
             // 
-            // lbl_CalcListLevel
-            // 
-            this.lbl_CalcListLevel.AutoSize = true;
-            this.lbl_CalcListLevel.Location = new System.Drawing.Point(764, 420);
-            this.lbl_CalcListLevel.Name = "lbl_CalcListLevel";
-            this.lbl_CalcListLevel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lbl_CalcListLevel.Size = new System.Drawing.Size(35, 16);
-            this.lbl_CalcListLevel.TabIndex = 21;
-            this.lbl_CalcListLevel.Text = "سطح:";
-            // 
             // lbl_CalcListName
             // 
             this.lbl_CalcListName.AutoSize = true;
@@ -493,7 +495,7 @@
             // lbl_CalcExpenseTitle
             // 
             this.lbl_CalcExpenseTitle.AutoSize = true;
-            this.lbl_CalcExpenseTitle.Location = new System.Drawing.Point(443, 389);
+            this.lbl_CalcExpenseTitle.Location = new System.Drawing.Point(203, 389);
             this.lbl_CalcExpenseTitle.Name = "lbl_CalcExpenseTitle";
             this.lbl_CalcExpenseTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_CalcExpenseTitle.Size = new System.Drawing.Size(37, 16);
@@ -503,7 +505,7 @@
             // lbl_CalcIncomeTitle
             // 
             this.lbl_CalcIncomeTitle.AutoSize = true;
-            this.lbl_CalcIncomeTitle.Location = new System.Drawing.Point(203, 389);
+            this.lbl_CalcIncomeTitle.Location = new System.Drawing.Point(443, 389);
             this.lbl_CalcIncomeTitle.Name = "lbl_CalcIncomeTitle";
             this.lbl_CalcIncomeTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_CalcIncomeTitle.Size = new System.Drawing.Size(37, 16);
@@ -512,75 +514,67 @@
             // 
             // btn_CalcSaveList
             // 
-            this.btn_CalcSaveList.Location = new System.Drawing.Point(564, 445);
+            this.btn_CalcSaveList.Location = new System.Drawing.Point(564, 417);
             this.btn_CalcSaveList.Name = "btn_CalcSaveList";
             this.btn_CalcSaveList.Size = new System.Drawing.Size(194, 23);
-            this.btn_CalcSaveList.TabIndex = 18;
+            this.btn_CalcSaveList.TabIndex = 2;
             this.btn_CalcSaveList.Text = "ذخیره";
             this.btn_CalcSaveList.UseVisualStyleBackColor = true;
             // 
             // btn_CalcSaveExpense
             // 
-            this.btn_CalcSaveExpense.Location = new System.Drawing.Point(243, 472);
+            this.btn_CalcSaveExpense.Location = new System.Drawing.Point(3, 472);
             this.btn_CalcSaveExpense.Name = "btn_CalcSaveExpense";
             this.btn_CalcSaveExpense.Size = new System.Drawing.Size(194, 23);
-            this.btn_CalcSaveExpense.TabIndex = 17;
+            this.btn_CalcSaveExpense.TabIndex = 10;
             this.btn_CalcSaveExpense.Text = "ثبت";
             this.btn_CalcSaveExpense.UseVisualStyleBackColor = true;
             // 
             // btn_CalcSaveIncome
             // 
-            this.btn_CalcSaveIncome.Location = new System.Drawing.Point(3, 472);
+            this.btn_CalcSaveIncome.Location = new System.Drawing.Point(243, 472);
             this.btn_CalcSaveIncome.Name = "btn_CalcSaveIncome";
             this.btn_CalcSaveIncome.Size = new System.Drawing.Size(194, 23);
-            this.btn_CalcSaveIncome.TabIndex = 16;
+            this.btn_CalcSaveIncome.TabIndex = 6;
             this.btn_CalcSaveIncome.Text = "ثبت";
             this.btn_CalcSaveIncome.UseVisualStyleBackColor = true;
             // 
             // txt_CalcExpenseValue
             // 
-            this.txt_CalcExpenseValue.Location = new System.Drawing.Point(243, 414);
+            this.txt_CalcExpenseValue.Location = new System.Drawing.Point(3, 414);
             this.txt_CalcExpenseValue.Name = "txt_CalcExpenseValue";
             this.txt_CalcExpenseValue.Size = new System.Drawing.Size(194, 22);
-            this.txt_CalcExpenseValue.TabIndex = 15;
+            this.txt_CalcExpenseValue.TabIndex = 8;
             this.txt_CalcExpenseValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CalcExpenseValue_KeyPress);
             // 
             // txt_CalcIncomeValue
             // 
-            this.txt_CalcIncomeValue.Location = new System.Drawing.Point(3, 414);
+            this.txt_CalcIncomeValue.Location = new System.Drawing.Point(243, 414);
             this.txt_CalcIncomeValue.Name = "txt_CalcIncomeValue";
             this.txt_CalcIncomeValue.Size = new System.Drawing.Size(194, 22);
-            this.txt_CalcIncomeValue.TabIndex = 14;
+            this.txt_CalcIncomeValue.TabIndex = 4;
             this.txt_CalcIncomeValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CalcIncomeValue_KeyPress);
-            // 
-            // txt_CalcListLevel
-            // 
-            this.txt_CalcListLevel.Location = new System.Drawing.Point(564, 417);
-            this.txt_CalcListLevel.Name = "txt_CalcListLevel";
-            this.txt_CalcListLevel.Size = new System.Drawing.Size(194, 22);
-            this.txt_CalcListLevel.TabIndex = 13;
-            this.txt_CalcListLevel.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_CalcListLevel_KeyPress);
             // 
             // txt_CalcListName
             // 
             this.txt_CalcListName.Location = new System.Drawing.Point(564, 389);
             this.txt_CalcListName.Name = "txt_CalcListName";
             this.txt_CalcListName.Size = new System.Drawing.Size(194, 22);
-            this.txt_CalcListName.TabIndex = 12;
+            this.txt_CalcListName.TabIndex = 1;
             // 
             // txt_CalcExpenseTitle
             // 
-            this.txt_CalcExpenseTitle.Location = new System.Drawing.Point(243, 386);
+            this.txt_CalcExpenseTitle.Location = new System.Drawing.Point(3, 386);
             this.txt_CalcExpenseTitle.Name = "txt_CalcExpenseTitle";
             this.txt_CalcExpenseTitle.Size = new System.Drawing.Size(194, 22);
-            this.txt_CalcExpenseTitle.TabIndex = 11;
+            this.txt_CalcExpenseTitle.TabIndex = 7;
             // 
             // txt_CalcIncomeTitle
             // 
-            this.txt_CalcIncomeTitle.Location = new System.Drawing.Point(3, 386);
+            this.txt_CalcIncomeTitle.Location = new System.Drawing.Point(243, 386);
             this.txt_CalcIncomeTitle.Name = "txt_CalcIncomeTitle";
             this.txt_CalcIncomeTitle.Size = new System.Drawing.Size(194, 22);
-            this.txt_CalcIncomeTitle.TabIndex = 10;
+            this.txt_CalcIncomeTitle.TabIndex = 3;
             // 
             // dgv_CalcTransactions
             // 
@@ -631,7 +625,7 @@
             // 
             this.tab_MachineLearning.Controls.Add(this.cmb_MLIncomeList);
             this.tab_MachineLearning.Controls.Add(this.lbl_MLIncomeList);
-            this.tab_MachineLearning.Controls.Add(this.cbm_MLExpenseList);
+            this.tab_MachineLearning.Controls.Add(this.cmb_MLExpenseList);
             this.tab_MachineLearning.Controls.Add(this.lbl_MLExpenseList);
             this.tab_MachineLearning.Controls.Add(this.lbl_MLExpenseValue);
             this.tab_MachineLearning.Controls.Add(this.lbl_MLIncomeValue);
@@ -660,37 +654,40 @@
             this.tab_MachineLearning.TabIndex = 2;
             this.tab_MachineLearning.Text = "یادگیری";
             this.tab_MachineLearning.UseVisualStyleBackColor = true;
+            this.tab_MachineLearning.Enter += new System.EventHandler(this.tab_MachineLearning_Enter);
             // 
             // cmb_MLIncomeList
             // 
             this.cmb_MLIncomeList.FormattingEnabled = true;
-            this.cmb_MLIncomeList.Location = new System.Drawing.Point(3, 441);
+            this.cmb_MLIncomeList.Location = new System.Drawing.Point(243, 441);
             this.cmb_MLIncomeList.Name = "cmb_MLIncomeList";
+            this.cmb_MLIncomeList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.cmb_MLIncomeList.Size = new System.Drawing.Size(194, 24);
-            this.cmb_MLIncomeList.TabIndex = 6;
+            this.cmb_MLIncomeList.TabIndex = 10;
             // 
             // lbl_MLIncomeList
             // 
             this.lbl_MLIncomeList.AutoSize = true;
-            this.lbl_MLIncomeList.Location = new System.Drawing.Point(203, 444);
+            this.lbl_MLIncomeList.Location = new System.Drawing.Point(443, 444);
             this.lbl_MLIncomeList.Name = "lbl_MLIncomeList";
             this.lbl_MLIncomeList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_MLIncomeList.Size = new System.Drawing.Size(35, 16);
             this.lbl_MLIncomeList.TabIndex = 5;
             this.lbl_MLIncomeList.Text = "لیست:";
             // 
-            // cbm_MLExpenseList
+            // cmb_MLExpenseList
             // 
-            this.cbm_MLExpenseList.FormattingEnabled = true;
-            this.cbm_MLExpenseList.Location = new System.Drawing.Point(243, 441);
-            this.cbm_MLExpenseList.Name = "cbm_MLExpenseList";
-            this.cbm_MLExpenseList.Size = new System.Drawing.Size(194, 24);
-            this.cbm_MLExpenseList.TabIndex = 6;
+            this.cmb_MLExpenseList.FormattingEnabled = true;
+            this.cmb_MLExpenseList.Location = new System.Drawing.Point(3, 441);
+            this.cmb_MLExpenseList.Name = "cmb_MLExpenseList";
+            this.cmb_MLExpenseList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmb_MLExpenseList.Size = new System.Drawing.Size(194, 24);
+            this.cmb_MLExpenseList.TabIndex = 6;
             // 
             // lbl_MLExpenseList
             // 
             this.lbl_MLExpenseList.AutoSize = true;
-            this.lbl_MLExpenseList.Location = new System.Drawing.Point(443, 444);
+            this.lbl_MLExpenseList.Location = new System.Drawing.Point(203, 444);
             this.lbl_MLExpenseList.Name = "lbl_MLExpenseList";
             this.lbl_MLExpenseList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_MLExpenseList.Size = new System.Drawing.Size(35, 16);
@@ -700,7 +697,7 @@
             // lbl_MLExpenseValue
             // 
             this.lbl_MLExpenseValue.AutoSize = true;
-            this.lbl_MLExpenseValue.Location = new System.Drawing.Point(443, 416);
+            this.lbl_MLExpenseValue.Location = new System.Drawing.Point(203, 416);
             this.lbl_MLExpenseValue.Name = "lbl_MLExpenseValue";
             this.lbl_MLExpenseValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_MLExpenseValue.Size = new System.Drawing.Size(35, 16);
@@ -710,7 +707,7 @@
             // lbl_MLIncomeValue
             // 
             this.lbl_MLIncomeValue.AutoSize = true;
-            this.lbl_MLIncomeValue.Location = new System.Drawing.Point(203, 416);
+            this.lbl_MLIncomeValue.Location = new System.Drawing.Point(443, 416);
             this.lbl_MLIncomeValue.Name = "lbl_MLIncomeValue";
             this.lbl_MLIncomeValue.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_MLIncomeValue.Size = new System.Drawing.Size(35, 16);
@@ -770,7 +767,7 @@
             // lbl_MLExpenseTitle
             // 
             this.lbl_MLExpenseTitle.AutoSize = true;
-            this.lbl_MLExpenseTitle.Location = new System.Drawing.Point(443, 388);
+            this.lbl_MLExpenseTitle.Location = new System.Drawing.Point(203, 388);
             this.lbl_MLExpenseTitle.Name = "lbl_MLExpenseTitle";
             this.lbl_MLExpenseTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_MLExpenseTitle.Size = new System.Drawing.Size(37, 16);
@@ -780,7 +777,7 @@
             // lbl_MLIncomeTitle
             // 
             this.lbl_MLIncomeTitle.AutoSize = true;
-            this.lbl_MLIncomeTitle.Location = new System.Drawing.Point(203, 388);
+            this.lbl_MLIncomeTitle.Location = new System.Drawing.Point(443, 388);
             this.lbl_MLIncomeTitle.Name = "lbl_MLIncomeTitle";
             this.lbl_MLIncomeTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.lbl_MLIncomeTitle.Size = new System.Drawing.Size(37, 16);
@@ -795,39 +792,42 @@
             this.btn_MLSaveList.TabIndex = 3;
             this.btn_MLSaveList.Text = "ذخیره";
             this.btn_MLSaveList.UseVisualStyleBackColor = true;
+            this.btn_MLSaveList.Click += new System.EventHandler(this.btn_MLSaveList_Click);
             // 
             // btn_MLSaveExpense
             // 
-            this.btn_MLSaveExpense.Location = new System.Drawing.Point(243, 471);
+            this.btn_MLSaveExpense.Location = new System.Drawing.Point(3, 471);
             this.btn_MLSaveExpense.Name = "btn_MLSaveExpense";
             this.btn_MLSaveExpense.Size = new System.Drawing.Size(194, 23);
-            this.btn_MLSaveExpense.TabIndex = 3;
+            this.btn_MLSaveExpense.TabIndex = 7;
             this.btn_MLSaveExpense.Text = "ثبت";
             this.btn_MLSaveExpense.UseVisualStyleBackColor = true;
+            this.btn_MLSaveExpense.Click += new System.EventHandler(this.btn_MLSaveExpense_Click);
             // 
             // btn_MLSaveIncome
             // 
-            this.btn_MLSaveIncome.Location = new System.Drawing.Point(3, 471);
+            this.btn_MLSaveIncome.Location = new System.Drawing.Point(243, 471);
             this.btn_MLSaveIncome.Name = "btn_MLSaveIncome";
             this.btn_MLSaveIncome.Size = new System.Drawing.Size(194, 23);
-            this.btn_MLSaveIncome.TabIndex = 3;
+            this.btn_MLSaveIncome.TabIndex = 11;
             this.btn_MLSaveIncome.Text = "ثبت";
             this.btn_MLSaveIncome.UseVisualStyleBackColor = true;
+            this.btn_MLSaveIncome.Click += new System.EventHandler(this.btn_MLSaveIncome_Click);
             // 
             // txt_MLExpenseValue
             // 
-            this.txt_MLExpenseValue.Location = new System.Drawing.Point(243, 413);
+            this.txt_MLExpenseValue.Location = new System.Drawing.Point(3, 413);
             this.txt_MLExpenseValue.Name = "txt_MLExpenseValue";
             this.txt_MLExpenseValue.Size = new System.Drawing.Size(194, 22);
-            this.txt_MLExpenseValue.TabIndex = 2;
+            this.txt_MLExpenseValue.TabIndex = 5;
             this.txt_MLExpenseValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MLExpenseValue_KeyPress);
             // 
             // txt_MLIncomeValue
             // 
-            this.txt_MLIncomeValue.Location = new System.Drawing.Point(3, 413);
+            this.txt_MLIncomeValue.Location = new System.Drawing.Point(243, 413);
             this.txt_MLIncomeValue.Name = "txt_MLIncomeValue";
             this.txt_MLIncomeValue.Size = new System.Drawing.Size(194, 22);
-            this.txt_MLIncomeValue.TabIndex = 2;
+            this.txt_MLIncomeValue.TabIndex = 9;
             this.txt_MLIncomeValue.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_MLIncomeValue_KeyPress);
             // 
             // txt_MLListLevel
@@ -842,46 +842,160 @@
             // 
             this.txt_MLListName.Location = new System.Drawing.Point(564, 388);
             this.txt_MLListName.Name = "txt_MLListName";
+            this.txt_MLListName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_MLListName.Size = new System.Drawing.Size(194, 22);
-            this.txt_MLListName.TabIndex = 2;
+            this.txt_MLListName.TabIndex = 1;
             // 
             // txt_MLExpenseTitle
             // 
-            this.txt_MLExpenseTitle.Location = new System.Drawing.Point(243, 385);
+            this.txt_MLExpenseTitle.Location = new System.Drawing.Point(3, 385);
             this.txt_MLExpenseTitle.Name = "txt_MLExpenseTitle";
+            this.txt_MLExpenseTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_MLExpenseTitle.Size = new System.Drawing.Size(194, 22);
-            this.txt_MLExpenseTitle.TabIndex = 2;
+            this.txt_MLExpenseTitle.TabIndex = 4;
             // 
             // txt_MLIncomeTitle
             // 
-            this.txt_MLIncomeTitle.Location = new System.Drawing.Point(3, 385);
+            this.txt_MLIncomeTitle.Location = new System.Drawing.Point(243, 385);
             this.txt_MLIncomeTitle.Name = "txt_MLIncomeTitle";
+            this.txt_MLIncomeTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txt_MLIncomeTitle.Size = new System.Drawing.Size(194, 22);
-            this.txt_MLIncomeTitle.TabIndex = 2;
+            this.txt_MLIncomeTitle.TabIndex = 8;
             // 
             // dgv_MLTransactionsList
             // 
+            this.dgv_MLTransactionsList.AllowUserToAddRows = false;
+            this.dgv_MLTransactionsList.AllowUserToDeleteRows = false;
             this.dgv_MLTransactionsList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_MLTransactionsList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_MLListID,
+            this.col_MLListName,
+            this.col_MLListCreateDate,
+            this.col_MLListLevel,
+            this.col_MLListIncomesNumber,
+            this.col_MLListExpenseNumbers});
             this.dgv_MLTransactionsList.Location = new System.Drawing.Point(510, 22);
             this.dgv_MLTransactionsList.Name = "dgv_MLTransactionsList";
+            this.dgv_MLTransactionsList.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_MLTransactionsList.Size = new System.Drawing.Size(339, 357);
             this.dgv_MLTransactionsList.TabIndex = 1;
             // 
             // dgv_MLIncomes
             // 
+            this.dgv_MLIncomes.AllowUserToAddRows = false;
+            this.dgv_MLIncomes.AllowUserToDeleteRows = false;
             this.dgv_MLIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_MLIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_MLIncomeID,
+            this.col_MLIncomeName,
+            this.col_MLIncomeValue,
+            this.col_MLIncomeCreateDate,
+            this.col_MLIncomeList});
             this.dgv_MLIncomes.Location = new System.Drawing.Point(243, 22);
             this.dgv_MLIncomes.Name = "dgv_MLIncomes";
+            this.dgv_MLIncomes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_MLIncomes.Size = new System.Drawing.Size(234, 357);
             this.dgv_MLIncomes.TabIndex = 0;
             // 
             // dgv_MLExpenses
             // 
+            this.dgv_MLExpenses.AllowUserToAddRows = false;
+            this.dgv_MLExpenses.AllowUserToDeleteRows = false;
             this.dgv_MLExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_MLExpenses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_MLExpenseID,
+            this.col_MLExpenseName,
+            this.col_MLExpenseValue,
+            this.col_MLExpenseCreateDate,
+            this.col_MLExpenseList});
             this.dgv_MLExpenses.Location = new System.Drawing.Point(3, 22);
             this.dgv_MLExpenses.Name = "dgv_MLExpenses";
+            this.dgv_MLExpenses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_MLExpenses.Size = new System.Drawing.Size(234, 357);
             this.dgv_MLExpenses.TabIndex = 0;
+            // 
+            // col_MLListID
+            // 
+            this.col_MLListID.HeaderText = "MLListID";
+            this.col_MLListID.Name = "col_MLListID";
+            this.col_MLListID.Visible = false;
+            // 
+            // col_MLListName
+            // 
+            this.col_MLListName.HeaderText = "نام";
+            this.col_MLListName.Name = "col_MLListName";
+            // 
+            // col_MLListCreateDate
+            // 
+            this.col_MLListCreateDate.HeaderText = "تاریخ ایجاد";
+            this.col_MLListCreateDate.Name = "col_MLListCreateDate";
+            // 
+            // col_MLListLevel
+            // 
+            this.col_MLListLevel.HeaderText = "سطح";
+            this.col_MLListLevel.Name = "col_MLListLevel";
+            // 
+            // col_MLListIncomesNumber
+            // 
+            this.col_MLListIncomesNumber.HeaderText = "تعداد ورودی‌ها";
+            this.col_MLListIncomesNumber.Name = "col_MLListIncomesNumber";
+            // 
+            // col_MLListExpenseNumbers
+            // 
+            this.col_MLListExpenseNumbers.HeaderText = "تعداد خروجی‌ها";
+            this.col_MLListExpenseNumbers.Name = "col_MLListExpenseNumbers";
+            // 
+            // col_MLIncomeID
+            // 
+            this.col_MLIncomeID.HeaderText = "MLIncomeID";
+            this.col_MLIncomeID.Name = "col_MLIncomeID";
+            this.col_MLIncomeID.Visible = false;
+            // 
+            // col_MLIncomeName
+            // 
+            this.col_MLIncomeName.HeaderText = "عنوان";
+            this.col_MLIncomeName.Name = "col_MLIncomeName";
+            // 
+            // col_MLIncomeValue
+            // 
+            this.col_MLIncomeValue.HeaderText = "مقدار";
+            this.col_MLIncomeValue.Name = "col_MLIncomeValue";
+            // 
+            // col_MLIncomeCreateDate
+            // 
+            this.col_MLIncomeCreateDate.HeaderText = "تاریخ ایجاد";
+            this.col_MLIncomeCreateDate.Name = "col_MLIncomeCreateDate";
+            // 
+            // col_MLIncomeList
+            // 
+            this.col_MLIncomeList.HeaderText = "لیست";
+            this.col_MLIncomeList.Name = "col_MLIncomeList";
+            // 
+            // col_MLExpenseID
+            // 
+            this.col_MLExpenseID.HeaderText = "MLExpenseID";
+            this.col_MLExpenseID.Name = "col_MLExpenseID";
+            this.col_MLExpenseID.Visible = false;
+            // 
+            // col_MLExpenseName
+            // 
+            this.col_MLExpenseName.HeaderText = "عنوان";
+            this.col_MLExpenseName.Name = "col_MLExpenseName";
+            // 
+            // col_MLExpenseValue
+            // 
+            this.col_MLExpenseValue.HeaderText = "مقدار";
+            this.col_MLExpenseValue.Name = "col_MLExpenseValue";
+            // 
+            // col_MLExpenseCreateDate
+            // 
+            this.col_MLExpenseCreateDate.HeaderText = "تاریخ ایجاد";
+            this.col_MLExpenseCreateDate.Name = "col_MLExpenseCreateDate";
+            // 
+            // col_MLExpenseList
+            // 
+            this.col_MLExpenseList.HeaderText = "لیست";
+            this.col_MLExpenseList.Name = "col_MLExpenseList";
             // 
             // frmMain
             // 
@@ -963,7 +1077,7 @@
         private System.Windows.Forms.TextBox txt_MLExpenseTitle;
         private System.Windows.Forms.Label lbl_MLExpneses;
         private System.Windows.Forms.Label lbl_MLIncomes;
-        private System.Windows.Forms.ComboBox cbm_MLExpenseList;
+        private System.Windows.Forms.ComboBox cmb_MLExpenseList;
         private System.Windows.Forms.ComboBox cmb_MLIncomeList;
         private System.Windows.Forms.Label lbl_MLIncomeList;
         private System.Windows.Forms.Label lbl_MLExpenseList;
@@ -982,7 +1096,6 @@
         private System.Windows.Forms.Label lbl_CalcExpenses;
         private System.Windows.Forms.Label lbl_CalcTransactionsList;
         private System.Windows.Forms.Label lbl_CalcIncomes;
-        private System.Windows.Forms.Label lbl_CalcListLevel;
         private System.Windows.Forms.Label lbl_CalcListName;
         private System.Windows.Forms.Label lbl_CalcExpenseTitle;
         private System.Windows.Forms.Label lbl_CalcIncomeTitle;
@@ -991,7 +1104,6 @@
         private System.Windows.Forms.Button btn_CalcSaveIncome;
         private System.Windows.Forms.TextBox txt_CalcExpenseValue;
         private System.Windows.Forms.TextBox txt_CalcIncomeValue;
-        private System.Windows.Forms.TextBox txt_CalcListLevel;
         private System.Windows.Forms.TextBox txt_CalcListName;
         private System.Windows.Forms.TextBox txt_CalcExpenseTitle;
         private System.Windows.Forms.TextBox txt_CalcIncomeTitle;
@@ -1001,6 +1113,22 @@
         private System.Windows.Forms.ContextMenuStrip cms_CalcTransactionsList;
         private System.Windows.Forms.ToolStripMenuItem btn_CalculateList;
         private System.Windows.Forms.ToolStripMenuItem btn_ShowListInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLListID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLListName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLListCreateDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLListLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLListIncomesNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLListExpenseNumbers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLIncomeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLIncomeName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLIncomeValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLIncomeCreateDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLIncomeList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLExpenseID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLExpenseName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLExpenseValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLExpenseCreateDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_MLExpenseList;
     }
 }
 
