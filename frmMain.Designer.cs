@@ -104,24 +104,40 @@
             this.txt_MLExpenseTitle = new System.Windows.Forms.TextBox();
             this.txt_MLIncomeTitle = new System.Windows.Forms.TextBox();
             this.dgv_MLTransactionsList = new System.Windows.Forms.DataGridView();
-            this.dgv_MLIncomes = new System.Windows.Forms.DataGridView();
-            this.dgv_MLExpenses = new System.Windows.Forms.DataGridView();
             this.col_MLListID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLListName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLListCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLListLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLListIncomesNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLListExpenseNumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_MLIncomes = new System.Windows.Forms.DataGridView();
             this.col_MLIncomeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLIncomeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLIncomeValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLIncomeCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLIncomeList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_MLExpenses = new System.Windows.Forms.DataGridView();
             this.col_MLExpenseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLExpenseName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLExpenseValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLExpenseCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_MLExpenseList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLListID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLListName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLListCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLListLevel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLListIncomeNumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLListExpenseNumbers = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLIncomeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLIncomeTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLIncomeValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLIncomeCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLIncomeList = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLExpenseID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLExpenseTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLExpenseValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLExpenseCreateDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.col_CLExpenseList = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mns_TopMenu.SuspendLayout();
             this.tbc_MainTab.SuspendLayout();
             this.tab_Dashboard.SuspendLayout();
@@ -395,6 +411,7 @@
             this.tab_AICalc.TabIndex = 1;
             this.tab_AICalc.Text = "محاسبه هوشمند";
             this.tab_AICalc.UseVisualStyleBackColor = true;
+            this.tab_AICalc.Enter += new System.EventHandler(this.tab_AICalc_Enter);
             // 
             // cmb_CalcIncomeList
             // 
@@ -520,6 +537,7 @@
             this.btn_CalcSaveList.TabIndex = 2;
             this.btn_CalcSaveList.Text = "ذخیره";
             this.btn_CalcSaveList.UseVisualStyleBackColor = true;
+            this.btn_CalcSaveList.Click += new System.EventHandler(this.btn_CalcSaveList_Click);
             // 
             // btn_CalcSaveExpense
             // 
@@ -529,6 +547,7 @@
             this.btn_CalcSaveExpense.TabIndex = 10;
             this.btn_CalcSaveExpense.Text = "ثبت";
             this.btn_CalcSaveExpense.UseVisualStyleBackColor = true;
+            this.btn_CalcSaveExpense.Click += new System.EventHandler(this.btn_CalcSaveExpense_Click);
             // 
             // btn_CalcSaveIncome
             // 
@@ -538,6 +557,7 @@
             this.btn_CalcSaveIncome.TabIndex = 6;
             this.btn_CalcSaveIncome.Text = "ثبت";
             this.btn_CalcSaveIncome.UseVisualStyleBackColor = true;
+            this.btn_CalcSaveIncome.Click += new System.EventHandler(this.btn_CalcSaveIncome_Click);
             // 
             // txt_CalcExpenseValue
             // 
@@ -578,10 +598,20 @@
             // 
             // dgv_CalcTransactions
             // 
+            this.dgv_CalcTransactions.AllowUserToAddRows = false;
+            this.dgv_CalcTransactions.AllowUserToDeleteRows = false;
             this.dgv_CalcTransactions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_CalcTransactions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_CLListID,
+            this.col_CLListName,
+            this.col_CLListCreateDate,
+            this.col_CLListLevel,
+            this.col_CLListIncomeNumbers,
+            this.col_CLListExpenseNumbers});
             this.dgv_CalcTransactions.ContextMenuStrip = this.cms_CalcTransactionsList;
             this.dgv_CalcTransactions.Location = new System.Drawing.Point(510, 23);
             this.dgv_CalcTransactions.Name = "dgv_CalcTransactions";
+            this.dgv_CalcTransactions.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_CalcTransactions.Size = new System.Drawing.Size(339, 357);
             this.dgv_CalcTransactions.TabIndex = 9;
             // 
@@ -607,17 +637,35 @@
             // 
             // dgv_CalcIncomes
             // 
+            this.dgv_CalcIncomes.AllowUserToAddRows = false;
+            this.dgv_CalcIncomes.AllowUserToDeleteRows = false;
             this.dgv_CalcIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_CalcIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_CLIncomeID,
+            this.col_CLIncomeTitle,
+            this.col_CLIncomeValue,
+            this.col_CLIncomeCreateDate,
+            this.col_CLIncomeList});
             this.dgv_CalcIncomes.Location = new System.Drawing.Point(243, 23);
             this.dgv_CalcIncomes.Name = "dgv_CalcIncomes";
+            this.dgv_CalcIncomes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_CalcIncomes.Size = new System.Drawing.Size(234, 357);
             this.dgv_CalcIncomes.TabIndex = 8;
             // 
             // dgv_CalcExpenses
             // 
+            this.dgv_CalcExpenses.AllowUserToAddRows = false;
+            this.dgv_CalcExpenses.AllowUserToDeleteRows = false;
             this.dgv_CalcExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_CalcExpenses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_CLExpenseID,
+            this.col_CLExpenseTitle,
+            this.col_CLExpenseValue,
+            this.col_CLExpenseCreateDate,
+            this.col_CLExpenseList});
             this.dgv_CalcExpenses.Location = new System.Drawing.Point(3, 23);
             this.dgv_CalcExpenses.Name = "dgv_CalcExpenses";
+            this.dgv_CalcExpenses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.dgv_CalcExpenses.Size = new System.Drawing.Size(234, 357);
             this.dgv_CalcExpenses.TabIndex = 7;
             // 
@@ -880,40 +928,6 @@
             this.dgv_MLTransactionsList.Size = new System.Drawing.Size(339, 357);
             this.dgv_MLTransactionsList.TabIndex = 1;
             // 
-            // dgv_MLIncomes
-            // 
-            this.dgv_MLIncomes.AllowUserToAddRows = false;
-            this.dgv_MLIncomes.AllowUserToDeleteRows = false;
-            this.dgv_MLIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_MLIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_MLIncomeID,
-            this.col_MLIncomeName,
-            this.col_MLIncomeValue,
-            this.col_MLIncomeCreateDate,
-            this.col_MLIncomeList});
-            this.dgv_MLIncomes.Location = new System.Drawing.Point(243, 22);
-            this.dgv_MLIncomes.Name = "dgv_MLIncomes";
-            this.dgv_MLIncomes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgv_MLIncomes.Size = new System.Drawing.Size(234, 357);
-            this.dgv_MLIncomes.TabIndex = 0;
-            // 
-            // dgv_MLExpenses
-            // 
-            this.dgv_MLExpenses.AllowUserToAddRows = false;
-            this.dgv_MLExpenses.AllowUserToDeleteRows = false;
-            this.dgv_MLExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_MLExpenses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.col_MLExpenseID,
-            this.col_MLExpenseName,
-            this.col_MLExpenseValue,
-            this.col_MLExpenseCreateDate,
-            this.col_MLExpenseList});
-            this.dgv_MLExpenses.Location = new System.Drawing.Point(3, 22);
-            this.dgv_MLExpenses.Name = "dgv_MLExpenses";
-            this.dgv_MLExpenses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.dgv_MLExpenses.Size = new System.Drawing.Size(234, 357);
-            this.dgv_MLExpenses.TabIndex = 0;
-            // 
             // col_MLListID
             // 
             this.col_MLListID.HeaderText = "MLListID";
@@ -945,6 +959,23 @@
             this.col_MLListExpenseNumbers.HeaderText = "تعداد خروجی‌ها";
             this.col_MLListExpenseNumbers.Name = "col_MLListExpenseNumbers";
             // 
+            // dgv_MLIncomes
+            // 
+            this.dgv_MLIncomes.AllowUserToAddRows = false;
+            this.dgv_MLIncomes.AllowUserToDeleteRows = false;
+            this.dgv_MLIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_MLIncomes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_MLIncomeID,
+            this.col_MLIncomeName,
+            this.col_MLIncomeValue,
+            this.col_MLIncomeCreateDate,
+            this.col_MLIncomeList});
+            this.dgv_MLIncomes.Location = new System.Drawing.Point(243, 22);
+            this.dgv_MLIncomes.Name = "dgv_MLIncomes";
+            this.dgv_MLIncomes.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgv_MLIncomes.Size = new System.Drawing.Size(234, 357);
+            this.dgv_MLIncomes.TabIndex = 0;
+            // 
             // col_MLIncomeID
             // 
             this.col_MLIncomeID.HeaderText = "MLIncomeID";
@@ -971,6 +1002,23 @@
             this.col_MLIncomeList.HeaderText = "لیست";
             this.col_MLIncomeList.Name = "col_MLIncomeList";
             // 
+            // dgv_MLExpenses
+            // 
+            this.dgv_MLExpenses.AllowUserToAddRows = false;
+            this.dgv_MLExpenses.AllowUserToDeleteRows = false;
+            this.dgv_MLExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_MLExpenses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.col_MLExpenseID,
+            this.col_MLExpenseName,
+            this.col_MLExpenseValue,
+            this.col_MLExpenseCreateDate,
+            this.col_MLExpenseList});
+            this.dgv_MLExpenses.Location = new System.Drawing.Point(3, 22);
+            this.dgv_MLExpenses.Name = "dgv_MLExpenses";
+            this.dgv_MLExpenses.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.dgv_MLExpenses.Size = new System.Drawing.Size(234, 357);
+            this.dgv_MLExpenses.TabIndex = 0;
+            // 
             // col_MLExpenseID
             // 
             this.col_MLExpenseID.HeaderText = "MLExpenseID";
@@ -996,6 +1044,90 @@
             // 
             this.col_MLExpenseList.HeaderText = "لیست";
             this.col_MLExpenseList.Name = "col_MLExpenseList";
+            // 
+            // col_CLListID
+            // 
+            this.col_CLListID.HeaderText = "ID";
+            this.col_CLListID.Name = "col_CLListID";
+            this.col_CLListID.Visible = false;
+            // 
+            // col_CLListName
+            // 
+            this.col_CLListName.HeaderText = "نام";
+            this.col_CLListName.Name = "col_CLListName";
+            // 
+            // col_CLListCreateDate
+            // 
+            this.col_CLListCreateDate.HeaderText = "تاریخ ایجاد";
+            this.col_CLListCreateDate.Name = "col_CLListCreateDate";
+            // 
+            // col_CLListLevel
+            // 
+            this.col_CLListLevel.HeaderText = "سطح";
+            this.col_CLListLevel.Name = "col_CLListLevel";
+            // 
+            // col_CLListIncomeNumbers
+            // 
+            this.col_CLListIncomeNumbers.HeaderText = "تعداد ورودی‌ها";
+            this.col_CLListIncomeNumbers.Name = "col_CLListIncomeNumbers";
+            // 
+            // col_CLListExpenseNumbers
+            // 
+            this.col_CLListExpenseNumbers.HeaderText = "تعداد خروجی‌ها";
+            this.col_CLListExpenseNumbers.Name = "col_CLListExpenseNumbers";
+            // 
+            // col_CLIncomeID
+            // 
+            this.col_CLIncomeID.HeaderText = "IncomeID";
+            this.col_CLIncomeID.Name = "col_CLIncomeID";
+            this.col_CLIncomeID.Visible = false;
+            // 
+            // col_CLIncomeTitle
+            // 
+            this.col_CLIncomeTitle.HeaderText = "عنوان";
+            this.col_CLIncomeTitle.Name = "col_CLIncomeTitle";
+            // 
+            // col_CLIncomeValue
+            // 
+            this.col_CLIncomeValue.HeaderText = "مقدار";
+            this.col_CLIncomeValue.Name = "col_CLIncomeValue";
+            // 
+            // col_CLIncomeCreateDate
+            // 
+            this.col_CLIncomeCreateDate.HeaderText = "تاریخ ایجاد";
+            this.col_CLIncomeCreateDate.Name = "col_CLIncomeCreateDate";
+            // 
+            // col_CLIncomeList
+            // 
+            this.col_CLIncomeList.HeaderText = "لیست";
+            this.col_CLIncomeList.Name = "col_CLIncomeList";
+            this.col_CLIncomeList.Visible = false;
+            // 
+            // col_CLExpenseID
+            // 
+            this.col_CLExpenseID.HeaderText = "ExpenseID";
+            this.col_CLExpenseID.Name = "col_CLExpenseID";
+            this.col_CLExpenseID.Visible = false;
+            // 
+            // col_CLExpenseTitle
+            // 
+            this.col_CLExpenseTitle.HeaderText = "عنوان";
+            this.col_CLExpenseTitle.Name = "col_CLExpenseTitle";
+            // 
+            // col_CLExpenseValue
+            // 
+            this.col_CLExpenseValue.HeaderText = "مقدار";
+            this.col_CLExpenseValue.Name = "col_CLExpenseValue";
+            // 
+            // col_CLExpenseCreateDate
+            // 
+            this.col_CLExpenseCreateDate.HeaderText = "تاریخ ایجاد";
+            this.col_CLExpenseCreateDate.Name = "col_CLExpenseCreateDate";
+            // 
+            // col_CLExpenseList
+            // 
+            this.col_CLExpenseList.HeaderText = "لیست";
+            this.col_CLExpenseList.Name = "col_CLExpenseList";
             // 
             // frmMain
             // 
@@ -1129,6 +1261,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn col_MLExpenseValue;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_MLExpenseCreateDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn col_MLExpenseList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLListID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLListName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLListCreateDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLListLevel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLListIncomeNumbers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLListExpenseNumbers;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLIncomeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLIncomeTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLIncomeValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLIncomeCreateDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLIncomeList;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLExpenseID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLExpenseTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLExpenseValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLExpenseCreateDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn col_CLExpenseList;
     }
 }
 
